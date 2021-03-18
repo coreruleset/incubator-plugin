@@ -32,7 +32,7 @@ Plugins infrastructure was introduced into CRS in early 2021. Older installation
 
 _Your exact config may look a bit different, namely the paths. The important part is to accompany the rules-include with two plugins-includes before and after like above. Adjust the paths accordingly._
 
-# Installation of the plugin
+### Installation of the plugin
 
 * Copy the files in the incubator plugin `plugins` folder into the CRS plugins folder.
 * Restart (reload!) the server.
