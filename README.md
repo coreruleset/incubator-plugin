@@ -11,6 +11,35 @@ Running Incubator and submitting your feedback is a great way of supporting CRS.
 
 Rules in the Incubator are non-blocking. They are meant to do no harm, but they are still beta.
 
+## How to run the incubator plugin?
+
+Plugins infrastructure was introduced into CRS in early 2021. Older installations can easily be adopted to run plugins. It's really simple.
+
+### Preparation for older installations
+
+* Create a folder named `plugins` in your existing CRS installation. That folder is meant to be on the same level as the `rules` folder. So there is your `crs-setup.conf` file and next to it the two folders `rules` and `plugins`.
+* Update your CRS rules include to follow this pattern:
+```
+<IfModule security2_module>
+	Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
+
+	Include modsecurity.d/owasp-modsecurity-crs/plugins/*-before.conf
+	Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
+	Include modsecurity.d/owasp-modsecurity-crs/plugins/*-after.conf
+
+</IfModule>
+```
+
+_Your exact config may look a bit different, namely the paths. The important part is to accompany the rules-include with two plugins-includes before and after like above. Adjust the paths accordingly._
+
+# Installation of the plugin
+
+* Copy the files in the incubator plugin `plugins` folder into the CRS plugins folder.
+* Restart (reload!) the server.
+
+
+
+
 ## Rules organization
 
 This is a CRS plugin with rules in the 9,900,00 - 9,999,999 range.
