@@ -23,14 +23,16 @@ Plugins infrastructure was introduced into CRS in early 2021. Older installation
 <IfModule security2_module>
 	Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
 
+	Include modsecurity.d/owasp-modsecurity-crs/plugins/*-config.conf
 	Include modsecurity.d/owasp-modsecurity-crs/plugins/*-before.conf
-	Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
-	Include modsecurity.d/owasp-modsecurity-crs/plugins/*-after.conf
 
+	Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
+
+	Include modsecurity.d/owasp-modsecurity-crs/plugins/*-after.conf
 </IfModule>
 ```
 
-_Your exact config may look a bit different, namely the paths. The important part is to accompany the rules-include with two plugins-includes before and after like above. Adjust the paths accordingly._
+_Your exact config may look a bit different, namely the paths. The important part is to accompany the rule includes with three plugin includes before and after like above. Adjust the paths accordingly._
 
 ### Installation of the plugin
 
