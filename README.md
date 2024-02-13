@@ -1,4 +1,4 @@
-# OWASP ModSecurity Core Rule Set - Incubator Plugin
+# OWASP CRS - Incubator Plugin
 
 ## Purpose
 
